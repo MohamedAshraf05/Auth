@@ -18,7 +18,7 @@ class RegisterView(generics.CreateAPIView):
 # display data  , create data
 class UserProfileApiView(APIView):
     permission_classes = [permissions.IsAuthenticated]
-
+    # Get the user data 
     def get(self , request):
         user = request.user
 
