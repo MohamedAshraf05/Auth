@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-&azsl*-^d-pda1s4ry!%0o$a!q!5(m3u#9png%%ap*^(z2(!i3
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["moa4rf112005.pythonanywhere.com"]
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
@@ -94,22 +94,22 @@ WSGI_APPLICATION = 'auth.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/6.0/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
-# }
-
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'MoA4rf112005$default',
-        'USER': 'MoA4rf112005',
-        'PASSWORD': 'm7md_a4rf005',
-        'HOST': 'MoA4rf112005.mysql.pythonanywhere-services.com',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+
+#DATABASES = {
+#    'default': {
+#        'ENGINE': 'django.db.backends.mysql',
+#        'NAME': 'MoA4rf112005$default',
+#        'USER': 'MoA4rf112005',
+#        'PASSWORD': 'm7md_a4rf005',
+#        'HOST': 'MoA4rf112005.mysql.pythonanywhere-services.com',
+#    }
+#}
 
 
 # Password validation

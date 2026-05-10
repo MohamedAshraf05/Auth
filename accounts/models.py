@@ -5,16 +5,12 @@ from django.contrib.auth.models import AbstractUser
 # email , password, username  , first_name , last_name
 class CustomUser(AbstractUser):
     email = models.EmailField(unique=True)
+    phone_number = models.CharField(max_length=20, blank=True, null=True)
+    
 
     USERNAME_FIELD = 'email'
     REQUIRED_FIELDS = ['username']
 
-# User Profile: # Address , phone number , profile picture , phone number 2 , national_id , bio , date_of_birth , age
-
-# relational tables
-
-# blank = فارغ 
-# null = لا يوجد قيمة في قاعدة البيانات 
 class UserProfile(models.Model):
     user = models.OneToOneField(CustomUser, on_delete=models.CASCADE)
     address = models.CharField(max_length=255, blank=True, null=True)
