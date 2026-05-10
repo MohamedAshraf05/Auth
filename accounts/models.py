@@ -4,9 +4,13 @@ from django.contrib.auth.models import AbstractUser
 
 # email , password, username  , first_name , last_name
 class CustomUser(AbstractUser):
+    class Type(models.TextChoices):
+        STUDENT = "student" , "Student"
+        TEACHER = "teacher" , "Teacher"
+
     email = models.EmailField(unique=True)
     phone_number = models.CharField(max_length=20, blank=True, null=True)
-    
+    type = models.CharField(max_length=20, choices=Type.choices, default=Type.STUDENT , null=True , blank=True)
 
     USERNAME_FIELD = 'email'
     REQUIRED_FIELDS = ['username']
